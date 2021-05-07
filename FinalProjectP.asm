@@ -12,7 +12,7 @@
 	# Ascii messages ###
 	user_goes_first_message: .asciiz "Based on the (pseudo) random drawing, you go first! \n" 
 	machine_goes_first_message: .asciiz  "Based on the (pseudo) random drawing, the machine goest first... \n" 
-	user_object_type_prompt: .asciiz "Would you like to be O's or X's? (0 for 0: O's and 1 for X's \n"
+	user_object_type_prompt: .asciiz "Would you like to be O's or X's? (0 for 0: O's and 1 for X's) \n"
 	user_input_column_prompt: .asciiz "Enter the column you wish place your X or O in: \n"
 	user_input_row_prompt: .asciiz "Enter the row you wish place your X or O in: \n"
 	postion_occupied_message: .asciiz "Sorry, that position is already occupied! \n" 
@@ -260,7 +260,7 @@ getRandomNumber:
 	move $a1, $t0 # seed for generator 
 	li, $v0, 40 # seed random number generator 
 	syscall 
-	li $a1, 1 # upper bound of random number
+	li $a1, 2 # upper bound of random number
 	li $v0, 42 # generate random number
 	syscall 
 	
